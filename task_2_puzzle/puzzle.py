@@ -12,8 +12,8 @@ def read_file_board(path: str) -> str:
             board.append(row.strip('\n'))
 
     return board
-
 # print(read_file_board('puzzle_board.txt'))
+
 
 
 def check_a_row_unicnes(row: str) -> bool:
@@ -25,6 +25,7 @@ def check_a_row_unicnes(row: str) -> bool:
     '''
     row = ''.join(row.replace('*', '').split(' '))
     return len(row) == len(set(row))
+
 
 
 def check_rows_and_columns(board: str) -> bool:
@@ -47,6 +48,7 @@ def check_rows_and_columns(board: str) -> bool:
                 return False
 
     return True
+
 
 
 def check_color_pattern(board: str) -> bool:
@@ -79,6 +81,7 @@ def validate_board(board: list) -> bool:
     if not (check_rows_and_columns(board) and check_color_pattern(board)):
         return False
     return True
+
 
 
 if __name__ == '__main__':
